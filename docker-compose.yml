@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    container_name: postgresdb
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=clave_java_db
+      - POSTGRES_DB=java_pruebas
+    ports:
+      - 5433:5432
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
